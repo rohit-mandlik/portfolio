@@ -9,32 +9,18 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Custom 3D Navigation Bar */
-        .navbar {
-            background-color: #333;
-            border-radius: 10px;
-            transform-style: preserve-3d;
-            position:fixed;
-        }
-
-        .navbar-nav {
-            perspective: 500px;
-        }
-
-        .navbar-collapse {
-            transform-origin: top center;
-            transform: rotateX(25deg);
-        }
-
-        .nav-item {
-            transform-style: preserve-3d;
-        }
-
-        .nav-link {
-            transform: rotateX(-25deg);
-        }
-
         /* Other styles for different sections */
+        /* Custom styles for contact form */
+        /* Footer styles */
+        /* Styles for the fixed navigation bar */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
         body {
+            padding-top: 70px; /* Adjust this value to match the height of your navbar */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -80,21 +66,31 @@
             padding: 30px 0;
         }
 
-        .certificate-item {
-            margin-bottom: 30px;
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
         }
 
-        .certificate-item img {
-            max-width: 100px;
-            margin-right: 20px;
-            display: inline-block;
+        #scrollToTopBtn:hover {
+            background-color: #555;
         }
     </style>
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#portfolio">Portfolio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -126,7 +122,7 @@
     <!-- Home Section -->
     <header id="home">
         <div class="container">
-            <img src="your-image.jpg" alt="Your Image" style="width: 200px; height: 200px; border-radius: 50%;">
+            <img src="img/profile.jpg" alt="Your Image" style="width: 200px; height: 200px; border-radius: 50%;">
             <h1>Your Name</h1>
             <p>Your Information</p>
             <a href="#contact" class="btn btn-primary">Contact Me</a>
@@ -140,13 +136,13 @@
             <h2 class="section-title text-center">Education</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Degree Name 1</h3>
-                    <p>Year - College Name</p>
-                    <p>Information about college</p>
+                    <h3>M.Sc. in Computer Science</h3>
+                    <p>2024 - Shivraj College, Gadhinglaj</p>
+                    <p>Worst college</p>
                 </div>
                 <div class="col-md-6">
-                    <h3>Degree Name 2</h3>
-                    <p>Year - College Name</p>
+                    <h3>B.Sc. in Computer Science</h3>
+                    <p>2022 - R. B. Madkholkar Mahavidyalaya, Chandgat</p>
                     <p>Information about college</p>
                 </div>
             </div>
@@ -158,6 +154,27 @@
         <div class="container">
             <h2 class="section-title text-center">Skills</h2>
             <div class="row">
+                <div class="col-md-6">
+                    <h4>HTML</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>HTML</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>HTML</h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <h4>HTML</h4>
                     <div class="progress">
@@ -177,12 +194,12 @@
             <div class="row">
                 <!-- Certificate 1 -->
                 <div class="col-md-6 certificate-item">
-                    <img src="certificate1-image.jpg" alt="Certificate 1">
+                    <img src="img/certificates/bj.png" alt="Certificate 1">
                     <a href="certificate1-link" target="_blank">Certificate Name 1</a>
                 </div>
                 <!-- Certificate 2 -->
                 <div class="col-md-6 certificate-item">
-                    <img src="certificate2-image.jpg" alt="Certificate 2">
+                    <img src="img/certificates/psesd.png" alt="Certificate 2">
                     <a href="certificate2-link" target="_blank">Certificate Name 2</a>
                 </div>
                 <!-- Repeat for other certificates -->
@@ -227,11 +244,14 @@
         </div>
     </footer>
 
+    <!-- Scroll to Top button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">&#8593;</button>
+
     <!-- Linking Bootstrap JS and Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // JavaScript code for form validation and submission error
+        // JavaScript for form validation and submission error
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault();
             var name = document.getElementById('name').value.trim();
@@ -273,6 +293,27 @@
                 submissionError.textContent = "Sorry! Our mail server is not responding";
             }
         });
+
+        // JavaScript for scroll to top button
+        window.onscroll = function () {
+            showScrollButton();
+        };
+
+        function showScrollButton() {
+            var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            var homeSection = document.getElementById("home");
+
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
 
