@@ -4,17 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohit Mandlik</title>
+    <title>Your Portfolio</title>
     <!-- Linking Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom CSS for 3D Navigation Bar */
+        /* Custom 3D Navigation Bar */
         .navbar {
-            background-color: black;
+            background-color: #333;
+            border-radius: 10px;
+            transform-style: preserve-3d;
         }
 
-        /* Other custom styles for different sections */
-        /* You can add your styles for home, education, skills, certificates, contact, and footer sections here */
+        .navbar-nav {
+            perspective: 500px;
+        }
+
+        .navbar-collapse {
+            transform-origin: top center;
+            transform: rotateX(25deg);
+        }
+
+        .nav-item {
+            transform-style: preserve-3d;
+        }
+
+        .nav-link {
+            transform: rotateX(-25deg);
+        }
+
+        /* Other styles for different sections */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        .footer-icons a {
+            color: #333;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+
+        .footer-icons a:hover {
+            color: #000;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .certificate-item {
+            margin-bottom: 30px;
+        }
+
+        .certificate-item img {
+            max-width: 100px;
+            margin-right: 20px;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -50,20 +123,20 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home">
-        <div class="container text-center">
-            <img src="img/profile.jpg" alt="Your Image" style="width: 200px; height: 200px; border-radius: 50%;">
+    <header id="home">
+        <div class="container">
+            <img src="your-image.jpg" alt="Your Image" style="width: 200px; height: 200px; border-radius: 50%;">
             <h1>Your Name</h1>
             <p>Your Information</p>
             <a href="#contact" class="btn btn-primary">Contact Me</a>
             <a href="link-to-resume.pdf" class="btn btn-secondary">Download Resume</a>
         </div>
-    </section>
+    </header>
 
     <!-- Education Section -->
-    <section id="education">
+    <section id="education" class="bg-light">
         <div class="container">
-            <h2>Education</h2>
+            <h2 class="section-title text-center">Education</h2>
             <div class="row">
                 <div class="col-md-6">
                     <h3>Degree Name 1</h3>
@@ -82,9 +155,7 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2>Skills</h2>
-            <!-- Example: Skills using Bootstrap Progress Bars -->
-            <!-- Replace these with your programming languages -->
+            <h2 class="section-title text-center">Skills</h2>
             <div class="row">
                 <div class="col-md-6">
                     <h4>HTML</h4>
@@ -99,14 +170,19 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates">
+    <section id="certificates" class="bg-light">
         <div class="container">
-            <h2>Certificates</h2>
+            <h2 class="section-title text-center">Certificates</h2>
             <div class="row">
-                <!-- Example: Certificate 1 -->
-                <div class="col-md-6">
-                    <img src="certificate1-image.jpg" alt="Certificate 1" style="width: 100px; height: 100px;">
-                    <p><a href="certificate1-link" target="_blank">Certificate Name 1</a></p>
+                <!-- Certificate 1 -->
+                <div class="col-md-6 certificate-item">
+                    <img src="certificate1-image.jpg" alt="Certificate 1">
+                    <a href="certificate1-link" target="_blank">Certificate Name 1</a>
+                </div>
+                <!-- Certificate 2 -->
+                <div class="col-md-6 certificate-item">
+                    <img src="certificate2-image.jpg" alt="Certificate 2">
+                    <a href="certificate2-link" target="_blank">Certificate Name 2</a>
                 </div>
                 <!-- Repeat for other certificates -->
             </div>
@@ -116,30 +192,37 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Contact Me</h2>
-            <form id="contactForm">
+            <h2 class="section-title text-center">Contact Me</h2>
+            <form id="contactForm" novalidate>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Name" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                     <span id="nameError" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     <span id="emailError" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="message" rows="5" placeholder="Message" required></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message"
+                        required></textarea>
+                    <span id="messageError" class="text-danger"></span>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <span id="submissionError" class="text-danger"></span>
             </form>
-            <span id="submissionError" class="text-danger"></span>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+    <footer>
         <div class="container">
-            <a href="facebook-link" target="_blank"><i class="fab fa-facebook fa-lg mx-2"></i></a>
-            <!-- Add other social media icons -->
+            <div class="footer-icons">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-trailhead"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -147,12 +230,47 @@
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Your JavaScript code for form validation and other functionality
+        // JavaScript code for form validation and submission error
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            // Form validation logic here
-            // Example: Showing error message
-            document.getElementById('submissionError').innerText = "Sorry! Our mail server is not responding";
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var message = document.getElementById('message').value.trim();
+
+            var nameError = document.getElementById('nameError');
+            var emailError = document.getElementById('emailError');
+            var messageError = document.getElementById('messageError');
+            var submissionError = document.getElementById('submissionError');
+
+            // Reset error messages
+            nameError.textContent = '';
+            emailError.textContent = '';
+            messageError.textContent = '';
+            submissionError.textContent = '';
+
+            // Validation logic
+            var isValid = true;
+            var nameRegex = /^[A-Za-z ]+$/;
+            if (!name.match(nameRegex)) {
+                nameError.textContent = 'Please enter a valid name';
+                isValid = false;
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailRegex)) {
+                emailError.textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+
+            if (message.length === 0) {
+                messageError.textContent = 'Please enter a message';
+                isValid = false;
+            }
+
+            // Simulate submission error
+            if (!isValid) {
+                submissionError.textContent = "Sorry! Our mail server is not responding";
+            }
         });
     </script>
 </body>
