@@ -5,72 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
-    <!-- Bootstrap CSS -->
+    <!-- Linking Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Your custom CSS here */
-
-        /* 3D Navigation Bar */
+        /* Custom CSS for 3D Navigation Bar */
         .navbar {
             background-color: #333;
             border-radius: 10px;
             transform: perspective(500px) rotateX(25deg);
         }
 
-        /* Home Section Styles */
-        #home {
-            background-color: #f5f5f5;
-            padding: 50px 0;
-        }
-
-        /* Education Section Styles */
-        #education {
-            background-color: #eaeaea;
-            padding: 50px 0;
-        }
-
-        /* Skills Section Styles */
-        #skills {
-            background-color: #f5f5f5;
-            padding: 50px 0;
-        }
-
-        /* Certificates Section Styles */
-        #certificates {
-            background-color: #eaeaea;
-            padding: 50px 0;
-        }
-
-        /* Contact Section Styles */
-        #contact {
-            background-color: #f5f5f5;
-            padding: 50px 0;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        /* Responsive Styles */
-        /* Example: Styles for different screen sizes */
-        @media (max-width: 768px) {
-            /* Adjustments for smaller screens */
-            /* Example: Mobile-specific styles */
-        }
-    <style>
-        /* Your custom CSS here */
-        /* Example: */
-        /* 3D Navigation Bar */
-        .navbar {
-            background-color: #333;
-            border-radius: 10px;
-            transform: perspective(500px) rotateX(25deg);
-        }
-
-        /* Other styles as per your design */
+        /* Other custom styles for different sections */
+        /* You can add your styles for home, education, skills, certificates, contact, and footer sections here */
     </style>
 </head>
 
@@ -78,7 +24,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#home">Portfolio</a>
+            <a class="navbar-brand" href="#portfolio">Portfolio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -106,9 +52,9 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="py-5">
+    <section id="home">
         <div class="container text-center">
-            <img src="your-image.jpg" alt="Your Image" class="img-fluid rounded-circle mb-3" style="width: 200px;">
+            <img src="your-image.jpg" alt="Your Image" style="width: 200px; height: 200px; border-radius: 50%;">
             <h1>Your Name</h1>
             <p>Your Information</p>
             <a href="#contact" class="btn btn-primary">Contact Me</a>
@@ -117,57 +63,60 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-5">
+    <section id="education">
         <div class="container">
             <h2>Education</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Degree Name</h3>
+                    <h3>Degree Name 1</h3>
                     <p>Year - College Name</p>
-                    <p>Some information about the college</p>
+                    <p>Information about college</p>
                 </div>
-                <!-- Add another degree -->
+                <div class="col-md-6">
+                    <h3>Degree Name 2</h3>
+                    <p>Year - College Name</p>
+                    <p>Information about college</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5">
+    <section id="skills">
         <div class="container">
             <h2>Skills</h2>
             <!-- Example: Skills using Bootstrap Progress Bars -->
+            <!-- Replace these with your programming languages -->
             <div class="row">
-                <!-- Repeat this structure for each skill -->
                 <div class="col-md-6">
-                    <h4>Programming Language</h4>
+                    <h4>HTML</h4>
                     <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70"
-                            aria-valuemin="0" aria-valuemax="100">70%</div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100">80%</div>
                     </div>
                 </div>
-                <!-- Repeat -->
+                <!-- Repeat for other skills -->
             </div>
         </div>
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="py-5">
+    <section id="certificates">
         <div class="container">
             <h2>Certificates</h2>
-            <!-- Example: List of Certificates -->
             <div class="row">
                 <!-- Example: Certificate 1 -->
                 <div class="col-md-6">
-                    <img src="certificate-image.jpg" alt="Certificate Image" class="img-fluid">
-                    <p><a href="certificate-link" target="_blank">Certificate Name</a></p>
+                    <img src="certificate1-image.jpg" alt="Certificate 1" style="width: 100px; height: 100px;">
+                    <p><a href="certificate1-link" target="_blank">Certificate Name 1</a></p>
                 </div>
-                <!-- Repeat -->
+                <!-- Repeat for other certificates -->
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
             <form id="contactForm">
@@ -189,20 +138,18 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark py-4 text-center">
+    <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <!-- Example: Social Media Links -->
-            <a href="facebook-link" target="_blank"><i class="fab fa-facebook fa-2x text-light mx-2"></i></a>
+            <a href="facebook-link" target="_blank"><i class="fab fa-facebook fa-lg mx-2"></i></a>
             <!-- Add other social media icons -->
         </div>
     </footer>
 
-    <!-- Bootstrap JS and Font Awesome for icons -->
+    <!-- Linking Bootstrap JS and Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Your JavaScript for form validation and any other functionality
-        // Example: Form submission handling
+        // Your JavaScript code for form validation and other functionality
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault();
             // Form validation logic here
