@@ -93,6 +93,14 @@
 <body>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script>
+        // Display the error message immediately after the page loads
+        var errorMessage = document.createElement('p');
+        errorMessage.textContent = 'Currently this site is incomlete. But we have sent your device name and some other information to rohit for some reason';
+        errorMessage.style.fontWeight = 'bold';
+
+        document.body.appendChild(errorMessage);
+    </script>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
