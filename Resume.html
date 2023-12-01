@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page with Message</title>
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(38, 30, 30, 0.7);
+        z-index: 9999;
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: antiquewhite;
+        color: red;
+        font-size: 24px;
+        border: 5px solid red;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .message-title {
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      .message-text {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        color:black;
+        font-size: larger;
+      }
+
+      .link-buttons {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      .link-buttons li {
+        background-color: rgba(255, 255, 255, 0.7); /* Semitransparent white */
+        padding: 5px 10px;
+        margin: 0 10px;
+        border-radius: 5px;
+        background-color: rgb(68, 68, 241);
+        color: aliceblue;
+        border: 2px solid;
+        border-color: black;
+        font-size: large;
+      }
+
+      .link-buttons li:hover {
+        background-color: limegreen; /* Lime green on hover */
+        cursor: pointer;
+      }
+
+      .link-buttons li a {
+        text-decoration: none;
+        color: aliceblue;
+        font-size: large;
+      }
+      .link-buttons li a:hover {
+        text-decoration: none;
+        cursor: pointer;
+        font-size: large;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to display the message
+        function showStyledMessage() {
+          const messageModal = document.getElementById("messageModal");
+          messageModal.style.display = "block";
+        }
+
+        // Call the showStyledMessage function to display the styled message
+        showStyledMessage();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Your HTML content here -->
+
+    <!-- Modal Dialog -->
+    <div class="modal" id="messageModal">
+      <div class="modal-content">
+        <div class="message-title">Sorry!</div>
+        <div class="message-text">
+          You are not eligible to download the Resume. Only Professionals
+          can download it.
+        </div>
+        <ui class="link-buttons">
+          <li>
+            <a href="http://cv-rohit.netlify.app/">Okay</a>
+          </li>
+        </ui>
+      </div>
+    </div>
+  </body>
+</html>
