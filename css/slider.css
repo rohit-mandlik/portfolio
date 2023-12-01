@@ -1,0 +1,39 @@
+.cert-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cert-title {
+  text-align: center;
+  color: #333;
+}
+
+.cert-certificate-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cert-certificate-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.cert-certificate-item img {
+  width: 70px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px;
+  border-radius: 6px;
+}
+
+.cert-certificate-item a {
+  font-size: 8px; /* Adjust the font size here */
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
